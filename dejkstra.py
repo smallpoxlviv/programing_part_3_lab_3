@@ -31,6 +31,10 @@ class Dejkstra:
 					self.relax_edge(child_idx, parent_idx, distance)
 					available_vertexes_queue_idxes.put((distance, child_idx))
 
+		for distance in self.vertex_distance:
+			if distance == sys.maxsize:
+				return None
+
 		return self.vertex_distance
 
 

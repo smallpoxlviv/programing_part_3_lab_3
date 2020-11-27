@@ -9,6 +9,8 @@ def main(file_in):
 	distances_to_further_client = []
 	for router_idx in routers_idxes:
 		distances_list = dejkstra_obj.dejkstra(graph, router_idx)
+		if distances_list is None:
+			return None
 		# set distance to routers 0, therefore other 
 		# distances are distances only to clients
 		for router_idx in routers_idxes:
